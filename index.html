@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon TCG App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Pokémon TCG App</h1>
+  </header>
+  <main>
+    <section class="search-container">
+      <input type="text" id="search" placeholder="Buscar por nombre...">
+      <button id="searchButton">🛸 Buscar</button>
+    </section>
+
+    <section class="filters">
+      <select id="type">
+        <option value="all">Todos los tipos</option>
+        <option value="fire">Fuego</option>
+        <option value="water">Agua</option>
+        <option value="grass">Planta</option>
+        <option value="electric">Eléctrico</option>
+        <option value="psychic">Psíquico</option>
+        <option value="fighting">Lucha</option>
+        <option value="darkness">Oscuridad</option>
+        <option value="dragon">Dragón</option>
+        <option value="fairy">Hada</option>
+        <option value="fighting">Lucha</option>
+        <option value="ghost">Fantasma</option>
+        <option value="normal">Normal</option>
+        <option value="steel">Acero</option>
+        <option value="fairy">Hada</option>
+        <option value="poison">Veneno</option>
+        <option value="bug">Bicho</option>
+        <option value="rock">Roca</option>
+        <option value="ice">Hielo</option>
+        <option value="ground">Tierra</option>
+        <option value="flying">Volador</option>
+      </select>
+
+      <select id="rarity">
+        <option value="all">Todas las rarezas</option>
+        <option value="common">Común</option>
+        <option value="uncommon">Poco común</option>
+        <option value="rare">Rara</option>
+        <option value="ultrarare">Ultra rara</option>
+        <option value="secretrare">Secreta rara</option>
+        <option value="promo">Promocional</option>
+      </select>
+    </section>
+
+    <section id="results" class="results-container">
+      <!-- Aquí aparecerán los resultados -->
+    </section>
+  </main>
+  <footer>
+    <p>Desarrollado con 💥 por fans de Pokémon</p>
+  </footer>
+  
+  <script>
+    const searchButton = document.getElementById('searchButton');
+    const searchInput = document.getElementById('search');
+    const resultsDiv = document.getElementById('results');
+
+    // Filtros de tipo y rareza
+    const typeSelect = document.getElementById('type');
+    const raritySelect = document.getElementById('rarity');
+
+    // Realizar búsqueda
+    searchButton.addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      const type = typeSelect.value;  // Obtener el tipo seleccionado
+      const rarity = raritySelect.value;  // Obtener la rareza seleccionada
+
+      if (!query) return alert('Por favor, escribe un nombre para buscar.');
+
+      let url = `https://api.pokemontcg.io/v2/cards?q=name:${query}`;
+
+      // Filtrar por tipo si se ha seleccionado uno
+      if (type !== 'all') {
+        url += `+types:${type}`;
+      }
+
+      // Filtrar por rareza si se ha seleccionado una
+      if (rarity !== 'all') {
+        url += `+rarity:${rarity}`;
+      }
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error('No se encontraron resultados.');
+          return response.json();
+        })
+        .then(data => {
+          resultsDiv.innerHTML = ''; // Limpiar resultados anteriores
+          data.data.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.classList.add('card');
+            cardElement.innerHTML = `
+              <h3>${card.name}</h3>
+              <img src="${card.images.small}" alt="${card.name}">
+              <p>Tipo: ${card.types.join(', ')}</p>
+              <p>Rareza: ${card.rarity}</p>
+            `;
+            resultsDiv.appendChild(cardElement);
+          });
+        })
+        .catch(error => {
+          alert(error.message);
+        });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
