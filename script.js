@@ -49,3 +49,19 @@ searchButton.addEventListener('click', () => {
       alert(error.message);
     });
 });
+
+document.getElementById('searchButton').addEventListener('click', function() {
+  // Obtener el contenedor de la página (body)
+  const body = document.body;
+  
+  // Añadir o quitar la clase 'hide-margins' al body
+  body.classList.toggle('hide-margins');
+  
+  // Aquí puedes agregar el código para hacer la búsqueda, si es necesario
+  // (Por ejemplo, mostrar resultados de búsqueda en la sección #results)
+  
+  // Evitar que el formulario se recargue
+  event.preventDefault();
+});
+
+
