@@ -80,7 +80,7 @@ header h1 {
   margin-bottom: 20px; /* Añadir espacio entre el buscador y los filtros */
 }
 
-.search-input, .search-button, select {
+.search-input, .search-button, .remove-favorite-btn, .favorite-btn, select {
   padding: 12px;
   font-size: 1.1rem;
   border-radius: 25px;
@@ -92,6 +92,7 @@ header h1 {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 
 /* Efecto al pasar el cursor sobre los botones */
 .search-input:hover, .search-button:hover, select:hover {
