@@ -14,71 +14,65 @@
   </header>
 
   <main class="content-container">
-    <!-- Márgenes laterales -->
-    <div class="left-margin"></div>
     
     <!-- Contenido principal -->
-    <div class="main-content" >
+    <div class="main-content">
       <section class="search-container" style="margin-top: 30px;">
-        
         <input type="text" id="search" placeholder="Buscar por nombre..." class="search-input">
         <button id="searchButton" class="search-button">Buscar</button>
+        <button id="favoritesButton" class="search-button">Favoritos</button>
       </section>
 
       <section class="filters">
         <select id="type">
           <option value="all">Todos los tipos</option>
-          <option value="fire">Fuego</option>
-          <option value="water">Agua</option>
-          <option value="grass">Planta</option>
-          <option value="electric">Eléctrico</option>
-          <option value="psychic">Psíquico</option>
-          <option value="fighting">Lucha</option>
-          <option value="darkness">Oscuro</option>
-          <option value="metal">Metálico</option>
-          <option value="fairy">Hada</option>
-          <option value="dragon">Dragón</option>
-          <option value="ghost">Fantasma</option>
-          <option value="ice">Hielo</option>
-          <option value="normal">Normal</option>
-          <option value="poison">Veneno</option>
-          <option value="bug">Bicho</option>
-          <option value="rock">Roca</option>
-          <option value="ground">Tierra</option>
-          <option value="steel">Acero</option>
-          <option value="unknown">Desconocido</option>
+          <option value="Fire">Fire</option>
+          <option value="Water">Water</option>
+          <option value="Grass">Grass</option>
+          <option value="Lightning">Lightning</option>
+          <option value="Psychic">Psychic</option>
+          <option value="Fighting">Fighting</option>
+          <option value="Darkness">Darkness</option>
+          <option value="Metal">Metal</option>
+          <option value="Fairy">Fairy</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Ghost">Ghost</option>
+          <option value="Ice">Ice</option>
+          <option value="Normal">Normal</option>
+          <option value="Poison">Poison</option>
+          <option value="Bug">Bug</option>
+          <option value="Rock">Rock</option>
+          <option value="Ground">Ground</option>
+          <option value="Steel">Steel</option>
+          <option value="Unknown">Unknown</option>
         </select>
       
         <select id="rarity">
           <option value="all">Todas las rarezas</option>
-          <option value="common">Común</option>
-          <option value="uncommon">Poco común</option>
-          <option value="rare">Rara</option>
-          <option value="rare holo">Rara Holográfica</option>
-          <option value="mythic">Mítica</option>
-          <option value="promo">Promo</option>
+          <option value="Common">Común</option>
+          <option value="Uncommon">Poco común</option>
+          <option value="Rare">Rara</option>
+          <option value="Rare Holo">Rara Holográfica</option>
+          <option value="Mythic">Mítica</option>
+          <option value="Promo">Promo</option>
         </select>
       </section>
-      
-     
-
 
       <section id="results" class="results-container">
         <!-- Aquí aparecerán los resultados -->
       </section>
     
-      <div> <img id="pokemonImage" src="img/logo.png" alt="Pokémon"  width="700" style="margin-top: 10%; margin-bottom: 10%;"></div>
-    
+      <div> 
+        <img id="pokemonImage" src="img/logo.png" alt="Pokémon" width="700" style="margin-top: 10%; margin-bottom: 10%;">
+      </div>
     </div>
-
-    
 
     <!-- Márgenes laterales -->
     <div class="right-margin"></div>
   </main>
 
   <footer>
-    <p>Desarrollado pon Alex Muñoz Ortega</p>
+    <p>💥 Desarrollado por Alex y Andres 💥</p>
   </footer>
 
   <script src="script.js"></script>
