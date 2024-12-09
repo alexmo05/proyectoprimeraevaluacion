@@ -29,5 +29,5 @@ Los usuarios interactúan con la aplicación a través de una interfaz gráfica 
 
 ### Autoría
 
-- **Alex   Muñoz Ortega  65%**
-- **Andrés Espíldora     35%**
+- **Alex   Muñoz Ortega  70%**
+- **Andrés Espíldora     30%**
