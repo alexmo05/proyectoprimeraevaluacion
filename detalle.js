@@ -12,10 +12,8 @@ if (cardDetails) {
   cardDetailsSection.innerHTML = `
     <img src="${image}" alt="${name}" style="width: 100%; max-width: 300px; margin-bottom: 20px;">
     <h2 style="color: black;">${name}</h2>
-    <p style="color: black;<strong>Tipo:</strong>${type}</p>
-    <p style="color: black;<strong>Tipo:</strong> ${type}</p>
-       <p style="color: black;<strong>Rareza:</strong> ${rarity}</p>
-        <p style="color: black;<strong>Rareza:</strong> ${rarity}</p>
+    <p  style="color: black;><strong>Tipo:</strong> ${type}</p>
+    <p>  style="color: black;<strong>Rareza:</strong> ${rarity}</p>
   `;
 }
 
